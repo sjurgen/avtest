@@ -1,8 +1,8 @@
 #!/bin/bash
 find /usr/local/ispmgr/var/userconf/ -print | while read LINE
 do
- USERNAME=$(echo $LINE | awk -F'.' '{print $2}')
- USERMAIL=$(cat $LINE | grep Email | awk {'print $2'})
+USERNAME=$(echo $LINE | awk -F'.' '{print $2}')
+USERMAIL=$(cat $LINE | grep Email | awk {'print $2'})
 if ! [ -d /var/www/$USERNAME/data/quarantine/ ]; then
  mkdir /var/www/$USERNAME/data/quarantine/
 fi
